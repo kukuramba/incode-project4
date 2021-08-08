@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+  <!-- INCLUDE LAYOUT.EJS -->
+  <%- include ('partials/layout') %>
+
+  <!-- HEADER -->
+  <h1>
+    List of users:
+  </h1>
+
+  <!-- TABLE OF USERS -->
+  <div class="divTableUsers">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr class="table-dark">
+          <th scope="col">User ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Last name</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Schedule</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div>
+          <% users.forEach( (e, index) => { %>
+            <tr> 
+              <th scope="row"><a class="btn btn-outline-dark" href="/users/<%= index %>"><%= index %></a></th>
+              <td> <%= e.firstname %> </td>
+              <td> <%= e.lastname %> </td>
+              <td> <%= e.email %> </td>
+              <td><a class="btn btn-outline-dark" href="/users/<%= index %>/schedules">
+                <img class="calIcon" src="/assets/calendar2-check.svg" alt="icon calendar">
+              </a></td>
+            </tr>
+          <% }); %>
+        </div>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

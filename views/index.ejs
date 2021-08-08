@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>  
+<head>
+</head>
+<body>
+
+  <!-- INCLUDE LAYOUT.EJS -->
+  <%- include ('partials/layout') %>
+
+  <!-- HEADER -->
+  <h1>
+    Welcome to our schedule website !
+  </h1>
+
+  <div class="container text-center welcomePageButtons">
+    <div class="row welcome-image">
+      <img src="/assets/toni.jpg" alt="trois cafes">
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="row">
+          <h4>Log in to your account:</h4>
+        </div>
+        <div class="loginSignupFormButton">
+          <a href="/login">
+            <button type="submit" class="btn btn-secondary">Log in</button>
+          </a>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="row">
+          <h4>New user? Start here:</h4>
+        </div>
+        <div class="loginSignupFormButton">
+          <a href="/signup">
+            <button type="submit" class="btn btn-secondary">Sign up</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>

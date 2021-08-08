@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+  <!-- INCLUDE LAYOUT.EJS -->
+  <%- include ('partials/layout') %>
+
+  <!-- HEADER -->
+  <h1>
+    User no. <%= userId %>
+  </h1>
+  
+  <!-- TABLE ROW WITH SINGLE USER -->
+  <div class="divTable">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr class="table-dark">
+          <th scope="col">User ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Last name</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Schedule</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div>
+            <tr>
+              <th scope="row"><%= userId %></th>
+              <td> <%= users[userId].firstname %> </td>
+              <td> <%= users[userId].lastname %> </td>
+              <td> <%= users[userId].email %> </td>
+              <td><a class="btn btn-outline-dark" href="/users/<%= userId %>/schedules">
+                <img class="calIcon" src="/assets/calendar2-check.svg" alt="icon calendar">
+              </a></td>
+            </tr>
+        </div>
+      </tbody>
+    </table>
+  </div>
+  
+</body>
+</html>

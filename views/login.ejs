@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+  <!-- INCLUDE LAYOUT.EJS -->
+  <%- include ('partials/layout') %>
+
+  <!-- HEADER -->
+  <h1>
+    Log in
+  </h1>
+
+  <!-- LOGIN FORM -->
+  <div>
+
+    <form class="loginSignupForm" method="POST" action="/login">
+      <div class="message2">
+        <% if (message2) {%>
+          <%= message2 %>
+        <%};%>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" name="email" placeholder="name@example.com" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" required>
+      </div>
+      <div class="message">
+        <% if (message) {%>
+          <%= message %>
+        <%};%>
+      </div>
+      <div class="loginSignupFormButton">
+        <button type="submit" class="btn btn-secondary">Login</button>
+      </div>
+    </form>
+    
+  </div>
+  
+</body>
+</html>

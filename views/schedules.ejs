@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+  <!-- INCLUDE LAYOUT.EJS -->
+  <%- include ('partials/layout') %>
+
+  <!-- HEADER -->
+  <h1>
+    Schedules:
+  </h1>
+
+  <!-- TABLE OF SCHEDULES -->
+  <div class="divTable">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr class="table-dark">
+          <th scope="col">User ID</th>
+          <th scope="col">Day</th>
+          <th scope="col">Start</th>
+          <th scope="col">End</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div>
+          <% schedules.forEach( (e) => { %>
+            <tr>
+              <th scope="row"><a class="btn btn-outline-dark" href="/users/<%= e.user_id %>"><%= e.user_id %></a></th>
+              <td> <%= nameDay(e.day) %> </td>
+              <td> <%= e.start_at.substring(0, 5) %> </td>
+              <td> <%= e.end_at.substring(0, 5) %> </td>
+              <% function nameDay(number) {
+                switch (number) {
+                  case 1: return "Monday";
+                  case 2: return "Tuesday";
+                  case 3: return "Wednesday";
+                  case 4: return "Thursday";
+                  case 5: return "Friday";
+                  case 6: return "Saturday";
+                  case 7: return "Sunday"; 
+                };
+              }; %>
+            </tr>
+          <% }); %>
+        </div>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- BUTTON ADD NEW SCHEDULE -->
+  <div class="addNewButton">
+    <a role="button" class="btn btn-secondary newUserButton" href="/schedules/new">Add new schedule</a>
+  </div>
+
+</body>
+</html>

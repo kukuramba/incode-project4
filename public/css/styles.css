@@ -1,0 +1,148 @@
+@font-face {
+  font-family: Nunito;
+  src: url(https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap);
+}
+
+body {
+  background: #f5f5f5;
+  font-size: 16px;
+  color: #5c5b5b;
+  font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.bg-dark-gray {
+  background: #6a7b8b;
+}
+
+.message {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+
+.message2 {
+  color: green;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* NAVBAR */
+
+.navbar{
+  padding: 0 !important;
+}
+
+.navbar-div{
+  padding: 0.5rem 3rem !important;
+}
+
+.navbar-nav a {
+  font-family: 'Archivo', sans-serif;
+  letter-spacing: 1px;
+  color: #f1f3f5 !important;
+  padding-right: 2rem !important;
+}
+
+.icon-mrcoffee-navbar {
+  height: 4rem;
+}
+
+.navbarDropdownMenu {
+  background-color: #f5f5f5;
+}
+
+.navbarDropdownMenu a {
+  color: #5c5b5b !important;
+  font-family: 'Archivo', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* HEADER */
+
+header {
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.logo-header {
+  width: 20%;
+}
+
+/* WELCOME PAGE */
+
+.welcomePageButtons {
+  width: 50%;
+  margin-top: 3rem;
+  margin-bottom: 10%;
+}
+
+.welcome-image {
+  padding-right: 10%;
+  padding-left: 10%;
+  padding-bottom: 3rem;
+}
+
+/* USERS, SCHEDULES */
+
+.divTableUsers {
+  margin: 6rem; 
+}
+
+.divTable {
+  margin: 6rem; 
+  margin-bottom: 1rem;
+}
+
+tr {
+  background-color: white;
+}
+
+.calIcon {
+  width: 2rem;
+}
+
+.addNewButton {
+  text-align: start;
+  margin-top: 2rem;
+  margin-left: 7rem;
+  margin-bottom: 6rem;
+}
+
+.newForm {
+  margin-top: 4rem;
+  margin-left: 30rem;
+  margin-right: 30rem;
+  margin-bottom: 6rem;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.loginSignupForm {
+  margin-top: 2rem;
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-bottom: 6rem;
+}
+
+.loginSignupFormButton {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.loginSignupFormButton button {
+  width: 100%
+}
+
+
+
+

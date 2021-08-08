@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+  <!-- INCLUDE LAYOUT.EJS -->
+  <%- include ('partials/layout') %>
+
+  <!-- HEADER -->
+  <h1>
+    Sign up
+  </h1>
+
+  <!-- SIGN UP FORM -->
+  <div>
+
+    <form class="loginSignupForm" method="POST" action="/signup">
+      <div class="mb-3">
+        <label for="firstname" class="form-label">Name</label>
+        <input type="text" class="form-control" name="firstname" required pattern="[a-zA-Z]+">
+      </div>
+      <div class="mb-3">
+        <label for="lastname" class="form-label">Last name</label>
+        <input type="text" class="form-control" name="lastname" required pattern="[a-zA-Z]+">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" name="email" placeholder="name@example.com" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+        <div class="form-text">Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.</div>
+      </div>
+      <div class="mb-3">
+        <label for="password2" class="form-label">Confirm password</label>
+        <input type="password" class="form-control" name="password2" required>
+      </div>
+      <div class="message">
+        <% if (message) {%>
+          <%= message %>
+        <%};%>
+      </div>
+      <div class="loginSignupFormButton">
+        <button type="submit" class="btn btn-secondary">Sign up</button>
+      </div>
+    </form>
+
+  </div>
+
+ 
+
+</body>
+</html>

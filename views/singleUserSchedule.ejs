@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  
+  <!-- INCLUDE LAYOUT.EJS -->
+  <%- include ('partials/layout') %>
+
+  <!-- HEADER -->
+  <h1>
+    Schedule of user no. <%= userId %>
+  </h1>
+  
+  <!-- TABLE OF SCHEDULES -->
+  <div class="divTable" id="divTableUserSchedule">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr class="table-dark">
+          <th scope="col">User ID</th>
+          <th scope="col">Day</th>
+          <th scope="col">Start</th>
+          <th scope="col">End</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div>
+          <% userSchedule.forEach( (e) => { %>
+            <tr>
+              <th scope="row"><%= e.user_id %></th>
+              <td> <%= e.day %> </td>
+              <td> <%= e.start_at %> </td>
+              <td> <%= e.end_at %> </td>
+            </tr>
+          <% }); %>
+        </div>
+      </tbody>
+    </table>
+  </div>
+
+ <!-- BUTTON ADD NEW SCHEDULE -->
+ <div class="addNewButton">
+  <a role="button" class="btn btn-secondary newUserButton" href="/schedules/new">Add new schedule</a>
+</div>
+
+</body>
+</html>

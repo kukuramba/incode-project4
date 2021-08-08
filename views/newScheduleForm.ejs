@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+  <!-- INCLUDE LAYOUT.EJS -->
+  <%- include ('partials/layout') %>
+
+  <!-- HEADER -->
+  <h1>
+    Adding new schedule:
+  </h1>
+
+  <!-- NEW SCHEDULE FORM -->
+  <form class="newForm" method="POST" action="/schedules">
+    <div class="mb-3">
+      <label for="user_id" class="form-label">User</label>
+      <select class="form-select" name="user_id" required>
+        <option value=""></option>
+        <% users.forEach( (e, index) => { %>
+          <option value="<%= index %>"><%= index %> - <%= e.firstname %> <%= e.lastname %></option>
+        <% }); %>
+      </select>
+      <div class="form-text">Click to select a user</div>
+    </div>
+    <div class="mb-3">
+      <label for="day" class="form-label">Week day</label>
+      <select class="form-select" name="day" required>
+        <option value=""></option>
+        <option value="1">Monday</option>
+        <option value="2">Tuesday</option>
+        <option value="3">Wednesday</option>
+        <option value="3">Thursday</option>
+        <option value="3">Friday</option>
+        <option value="3">Saturday</option>
+        <option value="3">Sunday</option>
+      </select>
+      <div class="form-text">Click to select a weekday</div>
+    </div>
+    <div class="mb-3">
+      <label for="start_at" class="form-label">Start time</label>
+      <input type="text" class="form-control" name="start_at" required pattern="^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$" placeholder="10:00">
+      <div class="form-text">Please use 24h format. For example: "10:00" or "15:00"</div>
+    </div>
+    <div class="mb-3">
+      <label for="end_at" class="form-label">End time</label>
+      <input type="text" class="form-control" name="end_at" required pattern="^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$" placeholder="15:00">
+      <div class="form-text">Please use 24h format. For example: "10:00" or "15:00"</div>
+      <div class="message">
+        <% if (message) {%>
+          <%= message %>
+        <%};%>
+      </div>
+    </div>
+      <button type="submit" class="btn btn-secondary">Submit</button>
+  </form>
+
+</body>
+</html>

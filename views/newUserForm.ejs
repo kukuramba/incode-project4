@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+  <!-- INCLUDE LAYOUT.EJS -->
+  <%- include ('partials/layout') %>
+
+  <!-- HEADER -->
+  <h1>
+    Adding new user:
+  </h1>
+
+  <!-- NEW USER FORM -->
+  <form class="newForm" method="POST" action="/users">
+    <div class="mb-3">
+      <label for="firstname" class="form-label">Name</label>
+      <input type="text" class="form-control" name="firstname" required>
+    </div>
+    <div class="mb-3">
+      <label for="lastname" class="form-label">Last name</label>
+      <input type="text" class="form-control" name="lastname" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">E-mail</label>
+      <input type="email" class="form-control" name="email" placeholder="name@example.com" required>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" name="password" required>
+    </div>
+    <div class="mb-3">
+      <label for="password2" class="form-label">Confirm password</label>
+      <input type="password" class="form-control" name="password2" required>
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <button type="submit" class="btn btn-secondary">Submit</button>
+      </div>
+      <div class="col-10">
+        <% if (message) {%>
+          <%= message %>
+        <%};%>
+      </div>
+    </div>
+    
+  </form>
+
+
+
+</body>
+</html>
